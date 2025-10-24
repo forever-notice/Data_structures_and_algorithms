@@ -39,3 +39,14 @@ htmlcov/
 dist/
 build/
 
+# C++ 编译产物
+*.o
+*.out
+*.exe
+*.app
+*.dSYM/
+# C++ 可执行文件（无扩展名）
+# 如果你的可执行文件都放在特定目录，可以更精确地配置
+# 例如：cpp_examples/test_*
+# 例如：cpp_examples/cpp_template
+
