@@ -51,10 +51,16 @@ from __future__ import annotations
 # 给定多个区间，计算让这些区间互不重叠所需要移除区间的最少个数。起止相连不算重叠
 
 class Solution:
-    def eraseOverlapIntervals(self,intervals: List[List[int]]) -> int:
+    def eraseOverlapIntervals(self, intervals: list[list[int]]) -> int:
+        intervals.sort(key=lambda x: x[1]) 
+        removed, prev_end = 0, intervals[0][1] 
+        for i in range(1, len(intervals)): 
+            if prev_end > intervals[i][0]: removed += 1 
+            else: prev_end = intervals[i][1] 
+        return removed
         
 
-sol = Solution()
-result = sol.candy([1,2,2])
-print("结果:", result, "预期:", 4)
-print("✅" if result == 4 else "❌")
+# sol = Solution()
+# result = sol.candy([1,2,2])
+# print("结果:", result, "预期:", 4)
+# print("✅" if result == 4 else "❌")
